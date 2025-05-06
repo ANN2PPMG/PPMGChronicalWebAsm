@@ -13,7 +13,7 @@
       "url": "css\/bootstrap\/bootstrap.min.css.map"
     },
     {
-      "hash": "sha256-6RKP+qBw0Q1jHtMl+dgor5\/7uRc8gsSVrlfU4kvYiYQ=",
+      "hash": "sha256-9gqgtI+cijU9UaiizvP47G7Zu0sRFXTRosfV2is4fd4=",
       "url": "data\/PMGChronical.db"
     },
     {
@@ -29,7 +29,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-Z0daIs\/JzEGeP40+uhtadaOd804hcoqcMFXEM+TvCFA=",
+      "hash": "sha256-jrp8GRgrHnTUYYGK0QUksv8q2mzSd67QrFwrAio4qPc=",
       "url": "index.html"
     },
     {
@@ -77,7 +77,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-ylJi51QAfzOebhCRxIr9inrPA3MNuVdPoSY81NXcp\/4=",
+      "hash": "sha256-9QAxa2EoZ9dFM1gKeuPQ7yQxI4P055+MDMCcr4T1m8Q=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -93,7 +93,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.Authorization.wasm"
     },
     {
-      "hash": "sha256-SEjd4R9MmQjQgaeDLYyBGp98yyq9v+ivFlE8elQy3oM=",
+      "hash": "sha256-4MZmNWIbiT\/pyDEu10JW6wow2W9y2t28B8xqLJcrZFc=",
       "url": "_framework\/Microsoft.AspNetCore.Components.wasm"
     },
     {
@@ -153,7 +153,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-Km0z+bSQe4l3CjyOC3Mc4pzjgMIDEvshDNodlx3C1pE=",
+      "hash": "sha256-o0ObKBMQ1h0fa2RPfixtVqiD7k7i2d7v2U+bZIvJVIY=",
       "url": "_framework\/PPMGChronicalWebAsm.wasm"
     },
     {
@@ -165,7 +165,7 @@
       "url": "_framework\/System.Collections.Immutable.wasm"
     },
     {
-      "hash": "sha256-UNqsVAJN\/6KiGZH69U04fJzkJK3F1K7tM8sFOXrFS7g=",
+      "hash": "sha256-h73l0zpFl5LcBYZqRSWbbHUkOHNkSPv8w6ckuAjjiqg=",
       "url": "_framework\/System.Collections.wasm"
     },
     {
@@ -177,10 +177,6 @@
       "url": "_framework\/System.Console.wasm"
     },
     {
-      "hash": "sha256-ckbl0IuDRu\/PDB\/OkTCIwMMt\/+CLZiPMcZrDvJrhnVY=",
-      "url": "_framework\/System.Diagnostics.DiagnosticSource.wasm"
-    },
-    {
       "hash": "sha256-j+xugwrg+4uy29siEp4hAVpjlOq9HBIipH0i+pBpdIw=",
       "url": "_framework\/System.Linq.wasm"
     },
@@ -189,27 +185,23 @@
       "url": "_framework\/System.Memory.wasm"
     },
     {
-      "hash": "sha256-5NL+iGQojq2kMm5Zkyht1RekJj5lYv5mJ2JXVk0rSAU=",
-      "url": "_framework\/System.Net.Http.Json.wasm"
-    },
-    {
-      "hash": "sha256-Ug9XH2QDPI1jq9auVsIX2VMN54om6ezm0rh6Qhujb94=",
+      "hash": "sha256-t6tyJki9C7XwwvD\/wMYXi\/a+Euz1YKhggQ4JX27aRf4=",
       "url": "_framework\/System.Net.Http.wasm"
     },
     {
-      "hash": "sha256-8ZWYuLg0pmFOHG\/yivISF7mfMgRN93tuk2\/T8IkDkEw=",
+      "hash": "sha256-T5sOg44ChbGEk3yxANWUET1Wxyfx4qBEILhoeSX0Ij4=",
       "url": "_framework\/System.Net.Primitives.wasm"
     },
     {
-      "hash": "sha256-f5eoRL\/kOBXyW6whuBPbjW\/fFPcAm0M1oA9xh3+LPd4=",
+      "hash": "sha256-y9CBEpthpi3v96lRS58iT7+oGeUNcR3Xdj9hL9OJE0w=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
-      "hash": "sha256-wHw9QhgSVTim9g7A9v0lb2UZmnfIzma81hjiW6ObYFA=",
+      "hash": "sha256-012hHwrtlc7za349kialcK9ugKbSfLdFDkB1vcf1Tk0=",
       "url": "_framework\/System.Private.Uri.wasm"
     },
     {
-      "hash": "sha256-ztXzc7ufqw28jhHoyLr1SqRrRpZ+dYqlPxeiahcsD8g=",
+      "hash": "sha256-YKSfBgbWqRLCurMOTnl4gtU2WKN0m6edT6NnoNEfktA=",
       "url": "_framework\/System.Runtime.InteropServices.JavaScript.wasm"
     },
     {
@@ -217,7 +209,7 @@
       "url": "_framework\/System.Runtime.InteropServices.wasm"
     },
     {
-      "hash": "sha256-tb5zFVJrsSt4a31Ie5aK1la4IReiKYevIJbif\/qBV0E=",
+      "hash": "sha256-OOit+PsJefkK9JrWMnT6U1RgZt3A78jeoO4jQT43r1w=",
       "url": "_framework\/System.Runtime.wasm"
     },
     {
@@ -229,7 +221,7 @@
       "url": "_framework\/System.Text.Encodings.Web.wasm"
     },
     {
-      "hash": "sha256-nSzZa77obeu6c001us8eLu+\/3pO3DSK+oCO7aqTI2lk=",
+      "hash": "sha256-9q6BYardXj2NWfvEgMgjHApSwMRUx+w6ReNk118EH2w=",
       "url": "_framework\/System.Text.Json.wasm"
     },
     {
@@ -249,5 +241,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "oiOqLkFQ"
+  "version": "SXtkNrUA"
 };
