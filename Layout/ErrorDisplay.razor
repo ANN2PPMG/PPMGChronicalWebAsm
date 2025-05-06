@@ -1,0 +1,40 @@
+﻿@* Shared/ErrorDisplay.razor *@
+@using PPMGChronicalWebAsm.Services
+@inject ErrorService ErrorService
+@implements IDisposable
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @errorMessage
+        <button type="button" class="btn-close" @onclick="ErrorService.ClearError"></button>
+    </div>
+}
+
+@code {
+    private string errorMessage;
+
+    protected override void OnInitialized()
+    {
+        ErrorService.OnError += ShowError;
+        ErrorService.OnClearError += ClearError;
+    }
+
+    private void ShowError(string message)
+    {
+        errorMessage = message;
+        StateHasChanged();
+    }
+
+    private void ClearError()
+    {
+        errorMessage = null;
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        ErrorService.OnError -= ShowError;
+        ErrorService.OnClearError -= ClearError;
+    }
+}

@@ -1,0 +1,389 @@
+﻿@page "/"
+@using PPMGChronicalWebAsm.Models
+@using PPMGChronicalWebAsm.Services
+@using Markdig
+@inject SqliteService SqliteService
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Competitions</PageTitle>
+
+<h1 class="text-center my-4">Нашите поводи за гордост</h1>
+
+<div class="container">
+    <!-- Search and filter controls -->
+    <div class="row mb-4">
+        <div class="col-md-6 mb-3 mb-md-0">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search competitions..." @bind="searchTerm" @bind:event="oninput">
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0">
+            <select class="form-select" @bind="selectedSubject">
+                <option value="">All Subjects</option>
+                @foreach (var subject in GetUniqueSubjects())
+                {
+                    <option value="@subject">@subject</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <!-- Competition cards -->
+    <div class="row">
+        @if (FilteredCompetitions.Any())
+        {
+            @foreach (var competition in FilteredCompetitions)
+            {
+                var subjectClass = GetSubjectClass(competition.subject);
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow hover-shadow" @onclick="() => ViewCompetitionDetails(competition)" role="button">
+                        <!-- Card Banner/Header with gradient background -->
+                        <div class="card-img-top competition-card-header @subjectClass">
+                            <div class="icon-overlay">
+                                <i class="bi bi-trophy competition-icon"></i>
+                            </div>
+                            <div class="subject-tag">
+                                <span>@competition.subject</span>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">@(competition.name.Length > 100 ? competition.name.Substring(0, 100) + "..." : competition.name)</h5>
+                            <p class="card-text text-muted">@(competition.description?.Length > 100 ? competition.description.Substring(0, 100) + "..." : competition.description)</p>
+
+                            <div class="mt-3 d-flex flex-wrap gap-2">
+                                <span class="badge rounded-pill bg-primary">@competition.subject</span>
+                                <span class="badge rounded-pill bg-secondary">@competition.school_year</span>
+                                @if (!string.IsNullOrEmpty(competition.tag))
+                                {
+                                    <span class="badge rounded-pill bg-success">@competition.tag</span>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted"><i class="bi bi-calendar-event me-1"></i>@FormatDateRange(competition.period_from, competition.period_to)</small>
+                                <span class="view-details-link">View Details <i class="bi bi-arrow-right-short"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center py-5">
+                <i class="bi bi-inbox fs-1 text-muted mb-3 d-block"></i>
+                <p class="lead">No competitions found</p>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Competition Details Modal -->
+<div class="modal fade" id="competitionDetailsModal" tabindex="-1" aria-labelledby="competitionDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="competitionDetailsModalLabel">@(selectedCompetition?.name)</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @if (selectedCompetition != null)
+                {
+                    <div class="d-flex justify-content-between mb-3">
+                        <div>
+                            <span class="badge bg-info me-2">@selectedCompetition.subject</span>
+                            <span class="badge bg-secondary me-2">@selectedCompetition.school_year</span>
+                            @if (!string.IsNullOrEmpty(selectedCompetition.tag))
+                            {
+                                <span class="badge bg-success">@selectedCompetition.tag</span>
+                            }
+                        </div>
+                        <div>
+                            <span class="text-muted">@FormatDateRange(selectedCompetition.period_from, selectedCompetition.period_to)</span>
+                        </div>
+                    </div>
+
+                    <div class="competition-banner mb-4 bg-light text-center py-4 rounded">
+                        <i class="bi bi-trophy display-1 text-warning"></i>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6 class="text-uppercase text-muted mb-3">Details</h6>
+                        <div class="markdown-content">
+                            @((MarkupString)RenderMarkdown(selectedCompetition.description))
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<Competition> competitions;
+    private Competition currentCompetition = new Competition();
+    private Competition competitionToDelete;
+    private Competition selectedCompetition;
+    private string modalTitle;
+    private string searchTerm = "";
+    private string selectedSubject = "";
+    private bool showValidation = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await SqliteService.InitializeDatabaseAsync("data/PMGChronical.db");
+        competitions = await SqliteService.GetCompetitionsAsync();
+    }
+
+    private IEnumerable<Competition> FilteredCompetitions =>
+        competitions == null
+            ? new List<Competition>()
+            : competitions
+                .Where(c => string.IsNullOrEmpty(searchTerm) ||
+                    (c.name?.ToLower()?.Contains(searchTerm.ToLower()) ?? false) ||
+                    (c.description?.ToLower()?.Contains(searchTerm.ToLower()) ?? false))
+                .Where(c => string.IsNullOrEmpty(selectedSubject) ||
+                    c.subject == selectedSubject)
+                .OrderByDescending(c => c.period_from);
+
+
+    private List<string> GetUniqueSubjects()
+    {
+        return competitions?
+            .Select(c => c.subject)
+            .Where(s => !string.IsNullOrEmpty(s))
+            .Distinct()
+            .OrderBy(s => s)
+            .ToList() ?? new List<string>();
+    }
+
+    private string FormatDateRange(string from, string to)
+    {
+        if (string.IsNullOrEmpty(from) && string.IsNullOrEmpty(to))
+            return "Date not specified";
+
+        if (string.IsNullOrEmpty(to))
+            return $"From {from}";
+
+        if (string.IsNullOrEmpty(from))
+            return $"Until {to}";
+
+        return $"{from} - {to}";
+    }
+
+    private string RenderMarkdown(string content)
+    {
+        if (string.IsNullOrEmpty(content))
+            return "<p>No description available.</p>";
+
+        // Convert markdown to HTML
+        return Markdown.ToHtml(content, new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
+    }
+
+    private void ViewCompetitionDetails(Competition competition)
+    {
+        selectedCompetition = competition;
+        ShowModal("competitionDetailsModal");
+    }
+
+    private async Task ShowModal(string modalId)
+    {
+        await JSRuntime.InvokeVoidAsync("showModal", modalId);
+    }
+
+    private async Task HideModal(string modalId)
+    {
+        await JSRuntime.InvokeVoidAsync("hideModal", modalId);
+    }
+
+    private string GetSubjectClass(string subject)
+    {
+        if (string.IsNullOrEmpty(subject)) return "";
+
+        subject = subject.ToLower();
+
+        if (subject.Contains("math") || subject.Contains("матем")) return "math";
+        if (subject.Contains("phys") || subject.Contains("физи")) return "science";
+        if (subject.Contains("liter") || subject.Contains("литер")) return "literature";
+        if (subject.Contains("infor") || subject.Contains("инфор")) return "informatics";
+
+        return "";
+    }
+
+}
+
+<style>
+    /* Enhanced card styling */
+    .card {
+        border-radius: 16px;
+        border: none;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    .hover-shadow:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.12) !important;
+        cursor: pointer;
+    }
+
+    /* Beautiful header design */
+    .competition-card-header {
+        height: 160px;
+        background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Custom icon styling */
+    .icon-overlay {
+        position: relative;
+        z-index: 2;
+    }
+
+    .competition-icon {
+        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.9);
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+    }
+
+    /* Subject tag in corner */
+    .subject-tag {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background-color: rgba(255,255,255,0.25);
+        backdrop-filter: blur(4px);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    /* Card content styling */
+    .card-title {
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #2d3748;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        color: #718096;
+        line-height: 1.6;
+    }
+
+    /* Pill badges */
+    .badge {
+        font-weight: 500;
+        padding: 0.5em 1em;
+    }
+
+        .badge.rounded-pill {
+            border-radius: 50rem;
+        }
+
+    /* Footer styling */
+    .card-footer {
+        padding-top: 0;
+    }
+
+    .view-details-link {
+        color: #3182ce;
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        transition: color 0.2s;
+    }
+
+        .view-details-link:hover {
+            color: #2c5282;
+        }
+
+        .view-details-link .bi {
+            font-size: 1.25rem;
+        }
+
+    /* Theme variations - you can create different background colors based on subject */
+    .competition-card-header.math {
+        background: linear-gradient(135deg, #11998e, #38ef7d);
+    }
+
+    .competition-card-header.science {
+        background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+    }
+
+    .competition-card-header.literature {
+        background: linear-gradient(135deg, #FF8008, #FFC837);
+    }
+
+    .competition-card-header.informatics {
+        background: linear-gradient(135deg, #05f450, #9feab7);
+    }
+
+
+    .markdown-content {
+        line-height: 1.6;
+    }
+
+        .markdown-content h1,
+        .markdown-content h2,
+        .markdown-content h3,
+        .markdown-content h4,
+        .markdown-content h5,
+        .markdown-content h6 {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .markdown-content p {
+            margin-bottom: 1rem;
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        .markdown-content blockquote {
+            padding: 0.5rem 1rem;
+            border-left: 4px solid #e9ecef;
+            color: #6c757d;
+        }
+
+        .markdown-content pre {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            overflow: auto;
+        }
+
+        .markdown-content code {
+            background-color: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+        }
+
+    .competition-banner {
+        border-radius: 8px;
+    }
+</style>

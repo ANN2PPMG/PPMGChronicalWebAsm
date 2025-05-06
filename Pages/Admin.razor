@@ -1,0 +1,165 @@
+﻿// Pages/Admin.razor
+@page "/admin"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using PPMGChronicalWebAsm.Services
+@inject AdminAuthService AuthService
+@inject NavigationManager NavManager
+@inject SqliteService SqliteService
+@inject ErrorService ErrorService
+
+@attribute [Authorize]
+
+<AuthorizeView>
+    <Authorized>
+        <h3>Admin Dashboard</h3>
+        
+        <div class="mb-3">
+            <button class="btn btn-secondary" @onclick="Logout">Logout</button>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                Execute SQL Query
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <textarea class="form-control mb-2" rows="4" 
+                        placeholder="Enter SQL query here..." 
+                        @bind="sqlQuery"></textarea>
+                </div>
+                <button class="btn btn-primary" @onclick="ExecuteQuery">Execute Query</button>
+            </div>
+        </div>
+        
+        @if (queryResults != null)
+        {
+            <div class="card">
+                <div class="card-header">Query Results</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                @if (queryColumns != null && queryColumns.Length > 0)
+                                {
+                                    @foreach (var column in queryColumns)
+                                    {
+                                        <th>@column[0]</th>
+                                    }
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var row in queryResults)
+                            {
+                                <tr>
+                                    @foreach (var cell in row)
+                                    {
+                                        <td>@cell</td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="alert @(isError ? "alert-danger" : "alert-success") mt-3">
+                @message
+            </div>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <RedirectToLogin />
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private string sqlQuery = "";
+    private string[][] queryResults;
+    private string[][] queryColumns;
+    private string message = "";
+    private bool isError = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        bool isAuthenticated = await AuthService.IsAuthenticatedAsync();
+        
+        if (!isAuthenticated)
+        {
+            NavManager.NavigateTo("/admin/login");
+        }
+    }
+
+    private async Task ExecuteQuery()
+    {
+        try
+        {
+            if (string.IsNullOrWhiteSpace(sqlQuery))
+            {
+                message = "Please enter a SQL query";
+                isError = true;
+                return;
+            }
+
+            // Execute the SQL query
+            string query = sqlQuery.Trim();
+            bool isSelect = query.ToLower().StartsWith("select");
+            
+            if (isSelect)
+            {
+                // For SELECT queries, display results
+                queryResults = await SqliteService.ExecuteQueryAsync(query);
+                
+                // Try to get column names if it's a select query
+                string tableName = ExtractTableName(query);
+                if (!string.IsNullOrEmpty(tableName))
+                {
+                    queryColumns = await SqliteService.GetColumnNames(tableName);
+                }
+                
+                message = $"Query executed successfully. Returned {queryResults.Length} rows.";
+                isError = false;
+            }
+            else
+            {
+                // For non-SELECT queries (INSERT, UPDATE, DELETE)
+                await SqliteService.ExecuteQueryAsync(query);
+                queryResults = null;
+                message = "Query executed successfully.";
+                isError = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Error executing query: {ex.Message}";
+            isError = true;
+            ErrorService.ShowError(message);
+        }
+    }
+    
+    private string ExtractTableName(string query)
+    {
+        // Very simple extraction - would need improvement for complex queries
+        try {
+            var parts = query.ToLower().Split("from");
+            if (parts.Length < 2) return "";
+            
+            var tablePart = parts[1].Trim();
+            var tableName = tablePart.Split(' ')[0].Trim();
+            return tableName;
+        }
+        catch {
+            return "";
+        }
+    }
+
+    private async Task Logout()
+    {
+        await AuthService.LogoutAsync();
+        NavManager.NavigateTo("/");
+    }
+}

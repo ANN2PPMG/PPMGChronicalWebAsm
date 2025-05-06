@@ -1,0 +1,51 @@
+﻿@page "/admin/login"
+@using PPMGChronicalWebAsm.Services
+@inject AdminAuthService AuthService
+@inject NavigationManager NavManager
+@inject ErrorService ErrorService
+
+<h3>Admin Login</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="password">Admin Password</label>
+            <input type="password" class="form-control" id="password" @bind="password" />
+        </div>
+        <button class="btn btn-primary mt-2" @onclick="Login">Login</button>
+
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <div class="alert alert-danger mt-3">@errorMessage</div>
+        }
+    </div>
+</div>
+
+@code {
+    private string password = "";
+    private string errorMessage = "";
+
+    private async Task Login()
+    {
+        try
+        {
+            bool isAuthenticated = await AuthService.LoginAsync(password);
+
+            if (isAuthenticated)
+            {
+                Console.WriteLine("IsAuthenticated: " + isAuthenticated);
+                NavManager.NavigateTo("/admin");
+            }
+            else
+            {
+                Console.WriteLine("IsAuthenticated: " + isAuthenticated);
+                errorMessage = "Invalid password";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Login error: {ex.Message}";
+            ErrorService.ShowError(errorMessage);
+        }
+    }
+}
