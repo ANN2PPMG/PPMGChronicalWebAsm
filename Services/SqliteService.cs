@@ -127,5 +127,34 @@
             await _jsRuntime.InvokeVoidAsync("deleteCompetition", id);
         }
 
+        public async Task<List<Student>> GetStudentsAsync()
+        {
+            List<Student> students = new List<Student>();
+
+            try
+            {
+                string query = "SELECT Id, Name, Bio, Picture FROM Students";
+                var results = await ExecuteQueryAsync(query);
+
+                foreach (var row in results)
+                {
+                    students.Add(new Student
+                    {
+                        Id = int.Parse(row[0]),
+                        Name = row[1],
+                        Bio = row[2],
+                        Picture = row[3]
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving students: {ex.Message}");
+            }
+
+            return students;
+        }
+
+
     }
 }
