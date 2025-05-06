@@ -20,6 +20,8 @@ wwwroot/_framework/
 !wwwroot/favicon.ico
 !wwwroot/*.css
 !wwwroot/*.js
+!wwwroot/data/PMGChronical.db
+
 
 # Ignore IDE-specific settings
 .idea/

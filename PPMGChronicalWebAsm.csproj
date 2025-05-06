@@ -20,9 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="wwwroot\data\PMGChronical.db">
+	  <Content Include="wwwroot\data\PMGChronical.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include=".github\workflows\deploy.yml" />
   </ItemGroup>
 
   <ItemGroup>
