@@ -113,7 +113,7 @@
                 school_year = row[7]
             }).ToList();
 
-            return competitions;
+            return competitions.OrderByDescending(c => c.period_from).ToList();
         }
 
 
