@@ -13,7 +13,7 @@
       "url": "css\/bootstrap\/bootstrap.min.css.map"
     },
     {
-      "hash": "sha256-9gqgtI+cijU9UaiizvP47G7Zu0sRFXTRosfV2is4fd4=",
+      "hash": "sha256-TvjJ48gM8MKx50Lbe0KcfTA3vi9kBjM7ua+w85AXC1g=",
       "url": "data\/PMGChronical.db"
     },
     {
@@ -29,7 +29,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-Z0daIs\/JzEGeP40+uhtadaOd804hcoqcMFXEM+TvCFA=",
+      "hash": "sha256-jrp8GRgrHnTUYYGK0QUksv8q2mzSd67QrFwrAio4qPc=",
       "url": "index.html"
     },
     {
@@ -39,10 +39,6 @@
     {
       "hash": "sha256-ZwFzGeUW0IDj7o4a2WeVA\/NICpNQWPgH+kb5OKJtvBE=",
       "url": "manifest.webmanifest"
-    },
-    {
-      "hash": "sha256-paIeuWnSzjeLGITWkk4p3rcejUsZWCJGPeOK9UhWXtg=",
-      "url": "sample-data\/weather.json"
     },
     {
       "hash": "sha256-gvHfnndfEu1tRf0rFb5988rWq7ITIotOaE8+AMbKYbc=",
@@ -77,7 +73,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-9niuWz4KLTnkqpu7dTzU9lQ15sySBxKyLAO7YCsTprE=",
+      "hash": "sha256-SnMfFDJIWtkmMRuyBoJl04ItV0gZkgt60\/KKeePCxiI=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -153,7 +149,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-R+Mrg8VDsJlclO97NFt\/un3I5DIe5LgDBuw3RNTTJDI=",
+      "hash": "sha256-9mAZ9Ykir2NU14kOcMEi7XAp\/w5j2k+QtJ\/Sv+2mkzc=",
       "url": "_framework\/PPMGChronicalWebAsm.wasm"
     },
     {
@@ -241,5 +237,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "82MFPLJQ"
+  "version": "M5hJeVm6"
 };
