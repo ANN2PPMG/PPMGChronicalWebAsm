@@ -163,21 +163,21 @@ main[b-3evq4mve8i] {
 /* /Pages/CompetitionsPreview.razor.rz.scp.css */
 @font-face {
     font-family: 'HeinrichScript';
-    src: url('/fonts/HeinrichScript.ttf') format('truetype');
+    src: url('fonts/HeinrichScript.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'AntiqueTradyBrk';
-    src: url('/fonts/a_AntiqueTradyBrk.ttf') format('truetype');
+    src: url('fonts/a_AntiqueTradyBrk.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'BaskervilleAZPS';
-    src: url('/fonts/BaskervilleAZPS.TTF') format('truetype');
+    src: url('fonts/BaskervilleAZPS.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
