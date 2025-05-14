@@ -194,7 +194,7 @@ main[b-3evq4mve8i] {
     margin: 0 auto;
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    background-image: url('../img/Paper_331S.jpg');
+    background-image: url('img/Paper_331S.jpg');
     background-size: cover; /* Ensures the image covers the area */
     background-repeat: no-repeat; /* Prevents tiling */
     background-position: center;

@@ -1,11 +1,11 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-A1+b\/EfRIFdhD5\/kAgohQTfIkEk3HGYLd3ffn0j26O8=",
+      "hash": "sha256-d+lHr0+3CmK0aUaMKSsUULAEvGlWOlnlJRamuBjlNmM=",
       "url": "404.html"
     },
     {
-      "hash": "sha256-e5u5m1je2NAkqzMjnS95nk9cYm3igO6HOkE5m+UV\/n0=",
+      "hash": "sha256-Z7jFBNNqk8a8N6UVPzjh0FtPyQ0GfxFSPYfZ3Q1eE8g=",
       "url": "css\/app.css"
     },
     {
@@ -105,7 +105,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-jwAGgrGn4GJNE0+nVNN6oqFlQYi72fcwz9VEf5mQ2ts=",
+      "hash": "sha256-qOaMl5eyPdy0Wb3hVixrLn8+mafg9Z7uXR5wxPe\/d84=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -181,7 +181,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-NJtZWkqK0FkqW4OxkHbMcJEX8expKqfM11+8KG2YmVM=",
+      "hash": "sha256-htADJSnF2nT1NdiQWsp4yWD\/wa+YOZI8eC3yc7vB4T8=",
       "url": "_framework\/PPMGChronicalWebAsm.wasm"
     },
     {
@@ -269,7 +269,7 @@
       "url": "_framework\/System.Web.HttpUtility.wasm"
     },
     {
-      "hash": "sha256-YRSKFOWVlqjh+++6dMRaB8ZmtuqntvwqpFKqNnv70lc=",
+      "hash": "sha256-unzJragrrUsLkKq0AC7aP52CXiV9+vZgxCbgDS6Eqj4=",
       "url": "PPMGChronicalWebAsm.styles.css"
     },
     {
@@ -277,5 +277,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "tnfgmzsf"
+  "version": "XxpCtKpg"
 };
