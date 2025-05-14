@@ -239,7 +239,7 @@
 
     private void Preview()
     {
-        var url = "/competitions-preview";
+        var url = "competitions-preview";
         if (!string.IsNullOrEmpty(searchTerm) || !string.IsNullOrEmpty(selectedSubject))
         {
             url += $"?search={Uri.EscapeDataString(searchTerm)}&subject={Uri.EscapeDataString(selectedSubject)}";
