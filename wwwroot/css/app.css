@@ -109,8 +109,10 @@ code {
     margin: 0 auto;
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    background-image: url('../img/Paper_331S.jpg') revert !important;
-    background-size: cover
+    background-image: url('../img/Paper_331S.jpg');
+    background-size: cover; /* Ensures the image covers the area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center;
 }
 
 /* Print-specific styles */
@@ -167,7 +169,7 @@ code {
 
     /* Improve readability for printing */
     .markdown-content {
-        font-size: 11pt;
+        font-size: 12pt;
         line-height: 1.5;
     }
 
@@ -186,28 +188,28 @@ code {
 
 @font-face {
     font-family: 'HeinrichScript';
-    src: url('fonts/HeinrichScript.ttf') format('truetype');
+    src: url('../fonts/HeinrichScript.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'AntiqueTradyBrk';
-    src: url('fonts/a_AntiqueTradyBrk.ttf') format('truetype');
+    src: url('../fonts/a_AntiqueTradyBrk.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Baskerville';
-    src: url('fonts/BaskervilleAZPS.TTF') format('truetype');
+    src: url('../fonts/BaskervilleAZPS.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Beryozki';
-    src: url('fonts/Beryozki.ttf') format('truetype');
+    src: url('../fonts/Beryozki.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
