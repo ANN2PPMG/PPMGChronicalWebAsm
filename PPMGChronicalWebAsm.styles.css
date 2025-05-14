@@ -160,3 +160,118 @@ main[b-3evq4mve8i] {
         overflow-y: auto;
     }
 }
+/* /Pages/CompetitionsPreview.razor.rz.scp.css */
+@font-face {
+    font-family: 'HeinrichScript';
+    src: url('/fonts/HeinrichScript.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AntiqueTradyBrk';
+    src: url('/fonts/a_AntiqueTradyBrk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BaskervilleAZPS';
+    src: url('/fonts/BaskervilleAZPS.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.card-title[b-8x8ugdet7b]{
+    font-family: 'HeinrichScript', serif;
+}
+
+/* Normal view styles */
+.a4-page[b-8x8ugdet7b] {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-image: url('../img/Paper_331S.jpg');
+    background-size: cover; /* Ensures the image covers the area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center;
+}
+
+.print-header[b-8x8ugdet7b] {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 1rem;
+}
+
+.competition-item[b-8x8ugdet7b] {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+}
+
+.competition-date[b-8x8ugdet7b] {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Badge styling */
+.badge.bg-math[b-8x8ugdet7b] {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.badge.bg-science[b-8x8ugdet7b] {
+    background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+}
+
+.badge.bg-literature[b-8x8ugdet7b] {
+    background: linear-gradient(135deg, #FF8008, #FFC837);
+}
+
+.badge.bg-informatics[b-8x8ugdet7b] {
+    background: linear-gradient(135deg, #05f450, #9feab7);
+}
+
+/* Markdown styling */
+.markdown-content[b-8x8ugdet7b] {
+    line-height: 1.6;
+    font-family: 'HeinrichScript', serif;
+    font-size: 18px;
+}
+
+    .markdown-content h1[b-8x8ugdet7b],
+    .markdown-content h2[b-8x8ugdet7b],
+    .markdown-content h3[b-8x8ugdet7b],
+    .markdown-content h4[b-8x8ugdet7b],
+    .markdown-content h5[b-8x8ugdet7b],
+    .markdown-content h6[b-8x8ugdet7b] {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .markdown-content p[b-8x8ugdet7b] {
+        margin-bottom: 1rem;
+     
+    }
+
+    .markdown-content ul[b-8x8ugdet7b],
+    .markdown-content ol[b-8x8ugdet7b] {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+    }
+
+    .markdown-content img[b-8x8ugdet7b] {
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+
+.inkTitle[b-8x8ugdet7b] {
+    font-family: 'Beryozki', serif;
+}
