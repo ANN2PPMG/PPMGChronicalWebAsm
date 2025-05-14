@@ -186,28 +186,28 @@ code {
 
 @font-face {
     font-family: 'HeinrichScript';
-    src: url('/fonts/HeinrichScript.ttf') format('truetype');
+    src: url('fonts/HeinrichScript.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'AntiqueTradyBrk';
-    src: url('/fonts/a_AntiqueTradyBrk.ttf') format('truetype');
+    src: url('fonts/a_AntiqueTradyBrk.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Baskerville';
-    src: url('/fonts/BaskervilleAZPS.TTF') format('truetype');
+    src: url('fonts/BaskervilleAZPS.TTF') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Beryozki';
-    src: url('/fonts/Beryozki.ttf') format('truetype');
+    src: url('fonts/Beryozki.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
