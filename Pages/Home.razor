@@ -29,6 +29,10 @@
                 }
             </select>
         </div>
+        <div class="col-md-2 mb-3 mb-md-0">
+            <button class="btn btn-primary" @onclick="Preview">Preview</button>
+
+            </div>
     </div>
 
     <!-- Competition cards -->
@@ -149,6 +153,8 @@
     private string searchTerm = "";
     private string selectedSubject = "";
     private bool showValidation = false;
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -230,6 +236,18 @@
 
         return "";
     }
+
+    private void Preview()
+    {
+        var url = "/competitions-preview";
+        if (!string.IsNullOrEmpty(searchTerm) || !string.IsNullOrEmpty(selectedSubject))
+        {
+            url += $"?search={Uri.EscapeDataString(searchTerm)}&subject={Uri.EscapeDataString(selectedSubject)}";
+        }
+        NavigationManager.NavigateTo(url);
+    }
+
+
 
 }
 

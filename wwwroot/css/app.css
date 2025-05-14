@@ -101,3 +101,113 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-image: url('../img/Paper_331S.jpg') revert !important;
+    background-size: cover
+}
+
+/* Print-specific styles */
+@media print {
+    /* Hide all navigation elements */
+    .sidebar, .top-row, .no-print, nav, header, footer, .navbar, .navbar-toggler {
+        display: none !important;
+    }
+
+    /* Reset layout structure */
+    .page {
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    main {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+
+    .content {
+        padding: 0 !important;
+    }
+
+    article.content {
+        padding: 0 !important;
+    }
+
+    /* A4 paper size */
+    body {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 0;
+        /*background-image: url('../img/Paper_331S.jpg');*/
+    }
+
+    .a4-page {
+        box-shadow: none;
+        padding: 10mm;
+        margin: 0;
+        width: 100%;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        background-image: url('../img/pexels-pixabay-235985.jpg') revert !important;
+        background-size: cover;
+    }
+
+    /* Ensure page breaks happen in the right places */
+    .competition-item {
+        page-break-inside: avoid;
+    }
+
+    /* Improve readability for printing */
+    .markdown-content {
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+
+    /* Make images print well */
+    img {
+        max-width: 100% !important;
+    }
+
+    /* Ensure backgrounds print */
+    .badge {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+}
+
+@font-face {
+    font-family: 'HeinrichScript';
+    src: url('/fonts/HeinrichScript.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AntiqueTradyBrk';
+    src: url('/fonts/a_AntiqueTradyBrk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Baskerville';
+    src: url('/fonts/BaskervilleAZPS.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Beryozki';
+    src: url('/fonts/Beryozki.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,114 @@
+﻿@font-face {
+    font-family: 'HeinrichScript';
+    src: url('/fonts/HeinrichScript.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AntiqueTradyBrk';
+    src: url('/fonts/a_AntiqueTradyBrk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BaskervilleAZPS';
+    src: url('/fonts/BaskervilleAZPS.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.card-title{
+    font-family: 'HeinrichScript', serif;
+}
+
+/* Normal view styles */
+.a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-image: url('../img/Paper_331S.jpg');
+    background-size: cover; /* Ensures the image covers the area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center;
+}
+
+.print-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 1rem;
+}
+
+.competition-item {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+}
+
+.competition-date {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* Badge styling */
+.badge.bg-math {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.badge.bg-science {
+    background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+}
+
+.badge.bg-literature {
+    background: linear-gradient(135deg, #FF8008, #FFC837);
+}
+
+.badge.bg-informatics {
+    background: linear-gradient(135deg, #05f450, #9feab7);
+}
+
+/* Markdown styling */
+.markdown-content {
+    line-height: 1.6;
+    font-family: 'HeinrichScript', serif;
+    font-size: 18px;
+}
+
+    .markdown-content h1,
+    .markdown-content h2,
+    .markdown-content h3,
+    .markdown-content h4,
+    .markdown-content h5,
+    .markdown-content h6 {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .markdown-content p {
+        margin-bottom: 1rem;
+     
+    }
+
+    .markdown-content ul,
+    .markdown-content ol {
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+    }
+
+    .markdown-content img {
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+
+.inkTitle {
+    font-family: 'Beryozki', serif;
+}

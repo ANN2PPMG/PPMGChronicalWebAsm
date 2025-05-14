@@ -1,0 +1,138 @@
+﻿@page "/competitions-preview"
+@using PPMGChronicalWebAsm.Models
+@using Markdig
+@using PPMGChronicalWebAsm.Services
+@inject NavigationManager Navigation
+@inject SqliteService SqliteService
+
+<PageTitle>Нашите поводи за гордост</PageTitle>
+
+<div class="print-container">
+    <div class="no-print mb-4 text-center">
+        <button class="btn btn-primary" onclick="window.print()">
+            <i class="bi bi-printer"></i> Печат
+        </button>
+        <button class="btn btn-secondary" onclick="window.history.back()">
+            <i class="bi bi-arrow-left"></i> Назад
+        </button>
+    </div>
+
+    <div class="a4-page">
+ 
+
+        <div class="print-header">
+           
+                <h2 class="inkTitle">ППМГ "Академик Никола Обрешков" - град Бургас</h2>
+                <h3 class="mt-3 inkTitle">Летописна книга</h3>
+            @if (!string.IsNullOrEmpty(searchTerm) || !string.IsNullOrEmpty(selectedSubject))
+            {
+                <div class="mt-3 d-flex justify-content-center gap-2">
+                    @if (!string.IsNullOrEmpty(searchTerm))
+                    {
+                        <span class="badge bg-secondary">Търсене: @searchTerm</span>
+                    }
+                    @if (!string.IsNullOrEmpty(selectedSubject))
+                    {
+                        <span class="badge bg-primary">Предмет: @selectedSubject</span>
+                    }
+                </div>
+            }
+        </div>
+
+        @if (competitions != null && competitions.Any())
+        {
+            @foreach (var competition in competitions)
+            {
+                var subjectClass = GetSubjectClass(competition.subject);
+
+                <div class="competition-item">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="card-title">@competition.name</h4>
+                            <div class="mb-2">
+                                <span class="badge @($"bg-{subjectClass}")">@competition.subject</span>
+                                <span class="badge bg-secondary">@competition.school_year</span>
+                                <span class="competition-date">@FormatDateRange(competition.period_from, competition.period_to)</span>
+                            </div>
+                            <div class="markdown-content">
+                                    @((MarkupString)RenderMarkdown(competition.description))
+                            </div>
+                            @if (!string.IsNullOrEmpty(competition.tag) && competition.tag.StartsWith("http"))
+                            {
+                                <div class="text-center mt-3">
+                                    <img src="@competition.tag" alt="Competition Image" style="max-width: 300px;" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-info text-center">Не са намерени събития.</div>
+        }
+     
+    </div>
+</div>
+
+@code {
+    private IEnumerable<Competition> competitions;
+    private string searchTerm;
+    private string selectedSubject;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        searchTerm = query["search"] ?? "";
+        selectedSubject = query["subject"] ?? "";
+
+        await SqliteService.InitializeDatabaseAsync("data/PMGChronical.db");
+        competitions = await SqliteService.GetCompetitionsAsync();
+
+        competitions = competitions
+            .Where(c => string.IsNullOrEmpty(searchTerm) ||
+                (c.name?.ToLower()?.Contains(searchTerm.ToLower()) ?? false) ||
+                (c.description?.ToLower()?.Contains(searchTerm.ToLower()) ?? false))
+            .Where(c => string.IsNullOrEmpty(selectedSubject) ||
+                c.subject == selectedSubject)
+            .OrderByDescending(c => c.period_from)
+            .ToList();
+    }
+
+    private string RenderMarkdown(string content)
+    {
+        if (string.IsNullOrEmpty(content))
+            return "<p>Няма описание.</p>";
+        return Markdown.ToHtml(content, new MarkdownPipelineBuilder().UseAdvancedExtensions().Build());
+    }
+
+    private string FormatDateRange(string from, string to)
+    {
+        if (string.IsNullOrEmpty(from) && string.IsNullOrEmpty(to))
+            return "Дата не е посочена";
+
+        if (string.IsNullOrEmpty(to))
+            return $"От {from}";
+
+        if (string.IsNullOrEmpty(from))
+            return $"До {to}";
+
+        return $"{from} - {to}";
+    }
+
+    private string GetSubjectClass(string subject)
+    {
+        if (string.IsNullOrEmpty(subject)) return "primary";
+
+        subject = subject.ToLower();
+
+        if (subject.Contains("math") || subject.Contains("матем")) return "math";
+        if (subject.Contains("phys") || subject.Contains("физи")) return "science";
+        if (subject.Contains("liter") || subject.Contains("литер")) return "literature";
+        if (subject.Contains("infor") || subject.Contains("инфор")) return "informatics";
+
+        return "primary";
+    }
+}

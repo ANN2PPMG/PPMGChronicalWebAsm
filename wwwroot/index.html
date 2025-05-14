@@ -18,6 +18,13 @@
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pirata+One|Bilbo+Swash+Caps&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: Morris;
+            src: url(https://cdn.statically.io/gh/EmmesCodes/Tipografias/dae9f5bb/MorrisInitials.ttf);
+        }
+    </style>
 </head>
 
 <body>
@@ -41,6 +48,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
+
+    <svg width="0" height="0">
+        <filter id="wavy2">
+            <feTurbulence id="turb" baseFrequency="0.02 0.05" numOctaves="2" seed="2" />
+            <feDisplacementMap in2="turb" in="SourceGraphic" scale="8" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+
 
 </body>
 
