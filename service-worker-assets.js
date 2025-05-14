@@ -1,6 +1,10 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
+      "hash": "sha256-A1+b\/EfRIFdhD5\/kAgohQTfIkEk3HGYLd3ffn0j26O8=",
+      "url": "404.html"
+    },
+    {
       "hash": "sha256-LIdqTvSHxAGMGcSegXDWazluzrrh0KKxqnIiIR386Hs=",
       "url": "css\/app.css"
     },
@@ -57,7 +61,7 @@
       "url": "img\/Texturelabs_Paper_378S.jpg"
     },
     {
-      "hash": "sha256-4lwRsyjKc41RE2a6rGyncj4DqpK\/rXY2yPVkZLf7kyo=",
+      "hash": "sha256-ne4+C\/INjglPHnyg539dvVXpIYE1qr4roAPkrwxGhrw=",
       "url": "index.html"
     },
     {
@@ -101,7 +105,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-GzR5L6cDZIZROAbUH8yErVvdUI3UsUAYC\/YgUEJhkxY=",
+      "hash": "sha256-GbhxBnNyzK4xnpMLZoNxL7oljKMOodj2QYm9GRIuUt8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -177,7 +181,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-4xr4heKyrkx9DOWQXUomdFVZ2cCWAkTqLsGAlNXqeEc=",
+      "hash": "sha256-ISk81wX67oCfIhRq+eRdnJtelOxftwjdUqckaG43u4s=",
       "url": "_framework\/PPMGChronicalWebAsm.wasm"
     },
     {
@@ -273,5 +277,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "OUoHgW9k"
+  "version": "aQldZRwW"
 };
