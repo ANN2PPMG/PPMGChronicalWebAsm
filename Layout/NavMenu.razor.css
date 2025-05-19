@@ -1,14 +1,15 @@
 .navbar-toggler {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .top-row {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #f5f5c4;
 }
 
 .navbar-brand {
     font-size: 1.1rem;
+    color: #000000;
 }
 
 .bi {
@@ -19,6 +20,7 @@
     margin-right: 0.75rem;
     top: -1px;
     background-size: cover;
+    filter: brightness(0);
 }
 
 .bi-house-door-fill-nav-menu {
@@ -47,7 +49,7 @@
     }
 
     .nav-item ::deep a {
-        color: #d7d7d7;
+        color: #000000;
         border-radius: 4px;
         height: 3rem;
         display: flex;
@@ -56,13 +58,13 @@
     }
 
 .nav-item ::deep a.active {
-    background-color: rgba(255,255,255,0.37);
-    color: white;
+    background-color: #FFE082;
+    color: #000000;
 }
 
 .nav-item ::deep a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+    background-color: #FFE082;
+    color: #000000;
 }
 
 @media (min-width: 641px) {

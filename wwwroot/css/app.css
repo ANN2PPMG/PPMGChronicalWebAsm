@@ -1,5 +1,12 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: url('../img/paper20.jpg');
+    background-size: cover; /* Ensures the image covers the area */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center;
+    background-attachment: fixed;  /* This will keep the background fixed while scrolling */
+    min-height: 100vh;  /* Ensure the background covers the full viewport height */
+    position: relative;  /* For proper z-index stacking */
 }
 
 h1:focus {
@@ -109,10 +116,7 @@ code {
     margin: 0 auto;
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    background-image: url('../img/Paper_331S.jpg');
-    background-size: cover; /* Ensures the image covers the area */
-    background-repeat: no-repeat; /* Prevents tiling */
-    background-position: center;
+    
 }
 
 /* Print-specific styles */
@@ -148,7 +152,10 @@ code {
         min-height: 297mm;
         margin: 0;
         padding: 0;
-        /*background-image: url('../img/Paper_331S.jpg');*/
+        background-image: url('../img/paper20.jpg');
+        background-size: cover; /* Ensures the image covers the area */
+        background-repeat: repeat; /* Prevents tiling */
+        background-position: center;
     }
 
     .a4-page {
@@ -212,4 +219,10 @@ code {
     src: url('../fonts/Beryozki.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+.sidebar {
+    background-color: transparent;  /* Remove the solid background color */
+    /* Or if you want some transparency with the background image: */
+    background-color: rgba(255, 249, 196, 0.7);  /* Light yellow with 70% opacity */
 }

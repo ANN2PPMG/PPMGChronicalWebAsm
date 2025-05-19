@@ -9,11 +9,13 @@ main {
 }
 
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: transparent;  /* Remove the solid background color */
+    /* Or if you want some transparency with the background image: */
+    background-color: rgba(255, 249, 196, 0.2);  /* Light yellow with 70% opacity */
 }
 
 .top-row {
-    background-color: #f7f7f7;
+    background-color: #f5f5c4;
     border-bottom: 1px solid #d6d5d5;
     justify-content: flex-end;
     height: 3.5rem;
