@@ -10,11 +10,13 @@ main[b-3evq4mve8i] {
 }
 
 .sidebar[b-3evq4mve8i] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: transparent;  /* Remove the solid background color */
+    /* Or if you want some transparency with the background image: */
+    background-color: rgba(255, 249, 196, 0.2);  /* Light yellow with 70% opacity */
 }
 
 .top-row[b-3evq4mve8i] {
-    background-color: #f7f7f7;
+    background-color: #f5f5c4;
     border-bottom: 1px solid #d6d5d5;
     justify-content: flex-end;
     height: 3.5rem;
@@ -78,16 +80,17 @@ main[b-3evq4mve8i] {
 }
 /* /Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-7kjye77jug] {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .top-row[b-7kjye77jug] {
     height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: #f5f5c4;
 }
 
 .navbar-brand[b-7kjye77jug] {
     font-size: 1.1rem;
+    color: #000000;
 }
 
 .bi[b-7kjye77jug] {
@@ -98,6 +101,7 @@ main[b-3evq4mve8i] {
     margin-right: 0.75rem;
     top: -1px;
     background-size: cover;
+    filter: brightness(0);
 }
 
 .bi-house-door-fill-nav-menu[b-7kjye77jug] {
@@ -126,7 +130,7 @@ main[b-3evq4mve8i] {
     }
 
     .nav-item[b-7kjye77jug]  a {
-        color: #d7d7d7;
+        color: #000000;
         border-radius: 4px;
         height: 3rem;
         display: flex;
@@ -135,13 +139,13 @@ main[b-3evq4mve8i] {
     }
 
 .nav-item[b-7kjye77jug]  a.active {
-    background-color: rgba(255,255,255,0.37);
-    color: white;
+    background-color: #FFE082;
+    color: #000000;
 }
 
 .nav-item[b-7kjye77jug]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+    background-color: #FFE082;
+    color: #000000;
 }
 
 @media (min-width: 641px) {
@@ -203,13 +207,13 @@ main[b-3evq4mve8i] {
 .print-header[b-8x8ugdet7b] {
     text-align: center;
     margin-bottom: 2rem;
-    border-bottom: 2px solid #dee2e6;
+    border-bottom: 3px solid #dee2e6;
     padding-bottom: 1rem;
 }
 
 .competition-item[b-8x8ugdet7b] {
     margin-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid #eee;
     padding-bottom: 1.5rem;
 }
 

@@ -5,7 +5,7 @@
       "url": "404.html"
     },
     {
-      "hash": "sha256-Z7jFBNNqk8a8N6UVPzjh0FtPyQ0GfxFSPYfZ3Q1eE8g=",
+      "hash": "sha256-9qubkNjXaqSS9a4V42glU1OPFZ+xBzdEREKvEqFsB2U=",
       "url": "css\/app.css"
     },
     {
@@ -49,8 +49,28 @@
       "url": "icon-512.png"
     },
     {
+      "hash": "sha256-gvDNEIpo1Y9J0GDrux5OVEOPHen0g27ZKBcoSUmgExY=",
+      "url": "img\/letter35.jpg"
+    },
+    {
       "hash": "sha256-5g33j45lUzC6MAp8kbS1JzhOnaoF\/nCVbqN5Gwe1I4w=",
       "url": "img\/Paper_331S.jpg"
+    },
+    {
+      "hash": "sha256-an1pO4jhmkH2WuYs1FZEn8i1sjIYlCji+PSXsTF\/YQg=",
+      "url": "img\/paper20.jpg"
+    },
+    {
+      "hash": "sha256-5RfWDPQpmTpoQaq+iy4FXajTPZrnQbkb8VoqyY3gAIY=",
+      "url": "img\/paper25.jpg"
+    },
+    {
+      "hash": "sha256-PV2Y+fVfhj9bFhCD9pxYo6PCmm9crmwUxchJWCcCrE0=",
+      "url": "img\/paper35.jpg"
+    },
+    {
+      "hash": "sha256-zl\/ylLChqpzB2d+1qcJfrNu5D12Zx55oPzryakjpsis=",
+      "url": "img\/paper66.jpg"
     },
     {
       "hash": "sha256-sxw9JIJtu+S5KjZjXdqcrNcsgeBooFUHIIz7RpbmS\/s=",
@@ -61,7 +81,7 @@
       "url": "img\/Texturelabs_Paper_378S.jpg"
     },
     {
-      "hash": "sha256-4lwRsyjKc41RE2a6rGyncj4DqpK\/rXY2yPVkZLf7kyo=",
+      "hash": "sha256-ne4+C\/INjglPHnyg539dvVXpIYE1qr4roAPkrwxGhrw=",
       "url": "index.html"
     },
     {
@@ -105,7 +125,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-qOaMl5eyPdy0Wb3hVixrLn8+mafg9Z7uXR5wxPe\/d84=",
+      "hash": "sha256-3SkblmjzX8uH6HeZ\/Deo1w4j+X1fZRmDWpz9CtiXEwo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -181,7 +201,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-htADJSnF2nT1NdiQWsp4yWD\/wa+YOZI8eC3yc7vB4T8=",
+      "hash": "sha256-Wy\/btEkFDMHuT6Q4\/1QQVAcH6B78zzJlODE5VRMQEM0=",
       "url": "_framework\/PPMGChronicalWebAsm.wasm"
     },
     {
@@ -269,7 +289,7 @@
       "url": "_framework\/System.Web.HttpUtility.wasm"
     },
     {
-      "hash": "sha256-unzJragrrUsLkKq0AC7aP52CXiV9+vZgxCbgDS6Eqj4=",
+      "hash": "sha256-VKJu8+hoxo5jU2Wi5RvHANdTEMlACB\/f+J506EtuzQ8=",
       "url": "PPMGChronicalWebAsm.styles.css"
     },
     {
@@ -277,5 +297,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "XxpCtKpg"
+  "version": "jRQUHLd1"
 };
