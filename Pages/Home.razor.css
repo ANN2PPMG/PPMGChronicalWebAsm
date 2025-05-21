@@ -1,0 +1,318 @@
+/* Card styling */
+.card {
+    border-radius: 16px;
+    border: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.hover-shadow:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12) !important;
+    cursor: pointer;
+}
+
+/* Beautiful header design */
+.competition-card-header {
+    height: 160px;
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Custom icon styling */
+.icon-overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.competition-icon {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+/* Subject tag in corner */
+.subject-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Card content styling */
+.card-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #718096;
+    line-height: 1.6;
+}
+
+/* Pill badges */
+.badge {
+    font-weight: 500;
+    padding: 0.5em 1em;
+}
+
+.badge.rounded-pill {
+    border-radius: 50rem;
+}
+
+/* Footer styling */
+.card-footer {
+    padding-top: 0;
+}
+
+.view-details-link {
+    color: #3182ce;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.view-details-link:hover {
+    color: #2c5282;
+}
+
+.view-details-link .bi {
+    font-size: 1.25rem;
+}
+
+/* Theme variations */
+.competition-card-header.math {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.competition-card-header.science {
+    background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+}
+
+.competition-card-header.literature {
+    background: linear-gradient(135deg, #FF8008, #FFC837);
+}
+
+.competition-card-header.informatics {
+    background: linear-gradient(135deg, #05f450, #9feab7);
+}
+
+/* Markdown content styling */
+.markdown-content {
+    line-height: 1.6;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.markdown-content p {
+    margin-bottom: 1rem;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.markdown-content blockquote {
+    padding: 0.5rem 1rem;
+    border-left: 4px solid #e9ecef;
+    color: #6c757d;
+}
+
+.markdown-content pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    overflow: auto;
+}
+
+.markdown-content code {
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+}
+
+.markdown-content img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.markdown-content .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 1rem 0;
+}
+
+.markdown-content .video-container video,
+.markdown-content .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.competition-banner {
+    border-radius: 8px;
+}
+
+/* Modal styling */
+.competition-modal-header {
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-body {
+    padding: 1.5rem;
+    background-color: #fff;
+}
+
+.modal-footer {
+    border-top: 1px solid #f0f0f0;
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.modal-title i {
+    font-size: 1.5rem;
+}
+
+/* Competition banner style */
+.competition-banner {
+    background: linear-gradient(135deg, #f5f7fa, #e4e8eb);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.student-profile-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Badge styling */
+.badge {
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+}
+
+.badge.bg-black {
+    background-color: #2d3748 !important;
+}
+
+.badge.bg-info {
+    background-color: #4299e1 !important;
+}
+
+.badge.bg-secondary {
+    background-color: #718096 !important;
+}
+
+/* Print Preview Button Styling */
+.btn-print-preview {
+    background: linear-gradient(135deg, #2c5282, #4299e1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(66, 153, 225, 0.2);
+    height: 38px; /* Match the height of the search input */
+    white-space: nowrap;
+}
+
+.btn-print-preview:hover {
+    background: linear-gradient(135deg, #2b6cb0, #3182ce);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(66, 153, 225, 0.3);
+}
+
+.btn-print-preview:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(66, 153, 225, 0.2);
+}
+
+.btn-print-preview i {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .btn-print-preview {
+        width: 100%;
+        margin-top: 0.5rem;
+        height: auto;
+        padding: 0.5rem 1rem;
+    }
+    .student-profile-image {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .student-profile-image {
+        max-width: 250px;
+    }
+} 

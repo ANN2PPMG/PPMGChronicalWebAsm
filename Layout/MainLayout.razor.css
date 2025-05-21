@@ -77,3 +77,23 @@ main {
         padding-right: 1.5rem !important;
     }
 }
+
+.school-title {
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .school-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .school-title {
+        font-size: 0.9rem;
+    }
+}
