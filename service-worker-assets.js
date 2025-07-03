@@ -5,7 +5,7 @@
       "url": "404.html"
     },
     {
-      "hash": "sha256-9qubkNjXaqSS9a4V42glU1OPFZ+xBzdEREKvEqFsB2U=",
+      "hash": "sha256-aJZgNkUL7X\/XMIqbNdtDtryrgq3Pfk\/4KMmhsq2fPUU=",
       "url": "css\/app.css"
     },
     {
@@ -17,11 +17,11 @@
       "url": "css\/bootstrap\/bootstrap.min.css.map"
     },
     {
-      "hash": "sha256-wgxlC1k7imE4FfGKdBvNUK0BsASFvQqok+rkX\/ipz8w=",
+      "hash": "sha256-gVbYLn1GqC0RXaHEbvhTA5cP11g\/R3CwGssBzXoepqQ=",
       "url": "data\/PMGChronical.db"
     },
     {
-      "hash": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=",
+      "hash": "sha256-Z2iXwGNfsLTzw0OksZ7qUKulDVW72B74JVggDqr\/nQo=",
       "url": "favicon.png"
     },
     {
@@ -125,7 +125,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-mLdeyt57ssASH7F\/Fkbi+k2ha5z8+kvHunzM9BbFzso=",
+      "hash": "sha256-frgjSbItEAjkA8ApMRZRndX1WRaOCqHxhfkTwBg5wvo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -201,7 +201,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-xl5r+L7FSiKNH9op28cLWLDU\/0E0hHWLqyS4HahsAsw=",
+      "hash": "sha256-vXzxrsemGwh2e2jqa6V9zEv6Z7+6XzCgAjDh\/y8Py+4=",
       "url": "_framework\/PPMGChronicalWebAsm.wasm"
     },
     {
@@ -297,5 +297,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "Mnet78vU"
+  "version": "1BGvcsit"
 };

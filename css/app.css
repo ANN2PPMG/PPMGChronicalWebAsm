@@ -226,3 +226,11 @@ code {
     /* Or if you want some transparency with the background image: */
     background-color: rgba(255, 249, 196, 0.7);  /* Light yellow with 70% opacity */
 }
+
+blockquote {
+    border-left: 4px solid #007bff;
+    padding-left: 1rem;
+    color: #6c757d;
+    font-style: italic;
+    background-color: lightgoldenrodyellow;
+}
