@@ -1,6 +1,7 @@
 /* Card styling */
-.card {
+.card-comp {
     border-radius: 16px;
+    background-color: #ffffff;
     border: none;
     overflow: hidden;
     transition: all 0.3s ease;

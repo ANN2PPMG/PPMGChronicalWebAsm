@@ -1,0 +1,156 @@
+﻿@page "/history"
+@inject IJSRuntime JSRuntime
+@implements IAsyncDisposable
+
+<header>
+    <h1>История</h1>
+        <nav>
+        
+            <nav>
+                <a href="home" >Основна информация</a>
+                <a href="history" class="active">История</a>
+                <a href="persona">Личности</a>
+            <a href="https://pmgbs.com/" target="_blank">Официален сайт</a>
+            </nav>
+        </nav>
+    </header>
+        <h1>ППМГ "Академик Никола Обрешков" – Бургас</h1>
+        <p class="tagline">От 1971 година</p>
+
+    <main class="main">
+        <aside class="left-col" aria-labelledby="timeline-title">
+            <h2 id="timeline-title">Хронология</h2>
+            <ul class="timeline-list" id="timeline-list">
+            <li tabindex="0" data-img="/img/home/1942.jpg" data-caption="1942 — Завършена е сградата на Мъжката гимназия.">
+                    <span class="school-year">1942 г.</span><span class="timeline-text">Завършена е сградата на Мъжката гимназия от арх. Храбър Попов (1938–42), в която днес се помещава ППМГ.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/1971.jpg" data-caption="1971 — Откриване на Математическата гимназия.">
+                    <span class="school-year">1971 г.</span><span class="timeline-text">Със заповед №9-4 от 27.05.1971 г. се открива Математическа гимназия в Бургас, 320 ученика в 12 паралелки.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/1973.jpg" data-caption="1973 — Прието е знамето на гимназията.">
+                    <span class="school-year">1973 г.</span><span class="timeline-text">На 23.05. се приема знамето на гимназията; отбелязан е първият патронен празник.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/1983.jpg" data-caption="1983/84 — Прием от VII клас и професионална квалификация.">
+                    <span class="school-year">1983/84</span><span class="timeline-text">Прием на ученици от седми клас; създадена е квалификация оператор-програмист на ЕИМ.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/1987.jpg" data-caption="1987/88 — Директор Марчо Друмев и преместване.">
+                    <span class="school-year">1987/88</span><span class="timeline-text">За директор е назначен Марчо Друмев; МГ се премества в сградата на ОУ „Братя Миладинови”.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/1992.jpg" data-caption="1992/93 — Преместване на ул. Стефан Стамболов 19.">
+                    <span class="school-year">1992/93</span><span class="timeline-text">От 11.09.1992 г. ПМГ се премества в сградата на ул. „Стефан Стамболов” №19, където е и до днес.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/2002.jpg" data-caption="2002/03 — Паралелка 'математика с немски език'.">
+                    <span class="school-year">2002/03</span><span class="timeline-text">Открита е паралелка с профил „математика с немски език”; въведен е XII клас.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/2014.jpg" data-caption="2014 — Многофункционален спортен корпус.">
+                    <span class="school-year">2014 г.</span><span class="timeline-text">Открит е многофункционален спортен корпус.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/2020.jpg" data-caption="2020/21 — Пандемична онлайн среда и часове по AI.">
+                    <span class="school-year">2020/21</span><span class="timeline-text">В пандемична обстановка учебните часове са онлайн; стартират факултативни часове по Изкуствен интелект.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/2022.jpg" data-caption="2022 — Откриване на STEM център.">
+                    <span class="school-year">2022 г.</span><span class="timeline-text">На церемония с участието на министър-председателя е открит СТЕМ център.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/2024.jpg" data-caption="2024 — Първа международна олимпиада по AI.">
+                    <span class="school-year">2024 г.</span><span class="timeline-text">Гимназията е домакин на първата международна олимпиада по Изкуствен интелект.</span>
+                </li>
+            <li tabindex="0" data-img="/img/home/2025.png" data-caption="2025 — Нов академичен корпус и едносменен режим.">
+                    <span class="school-year">2025 г.</span><span class="timeline-text">Завършен е нов академичен корпус и е въведен в експлоатация за учебната 2025/26 г.; преминава се на едносменен режим.</span>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="right-col" aria-live="polite">
+            <div class="preview">
+                <img id="preview-image" src="/img/home/pmg.jpg" alt="Преглед на събитие">
+                <div class="caption" id="preview-caption">Преместете курсора върху събитие, за да видите изображение.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 ППМГ "Ак. Н. Обрешков" | Всички права запазени
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const list = document.getElementById('timeline-list');
+            const previewImg = document.getElementById('preview-image');
+            const previewCaption = document.getElementById('preview-caption');
+            const defaultSrc = previewImg.getAttribute('src');
+            const defaultCaption = previewCaption.textContent;
+
+            // Показване при hover и при фокус (accessibility), и поддържане за клик на мобилни
+            function showPreview(imgSrc, captionText) {
+                if (imgSrc) {
+                    previewImg.style.opacity = '0';
+                    // малка пауза за плавен ефект
+                    setTimeout(() => {
+                        previewImg.src = imgSrc;
+                        previewCaption.textContent = captionText || '';
+                        previewImg.style.opacity = '1';
+                    }, 100);
+                } else {
+                    hidePreview();
+                }
+            }
+
+            function hidePreview() {
+                previewImg.style.opacity = '0';
+                setTimeout(() => {
+                    previewImg.src = defaultSrc;
+                    previewCaption.textContent = defaultCaption;
+                    previewImg.style.opacity = '1';
+                }, 100);
+            }
+
+            // Добавяме слушатели за всеки li
+            list.querySelectorAll('li').forEach(li => {
+                const img = li.dataset.img;
+                const caption = li.dataset.caption || '';
+
+                li.addEventListener('mouseenter', () => showPreview(img, caption));
+                li.addEventListener('focus', () => showPreview(img, caption)); // keyboard
+                li.addEventListener('mouseleave', () => hidePreview());
+                li.addEventListener('blur', () => hidePreview());
+
+                // На мобилни/таблети клик ще превключи изображението (toggle)
+                li.addEventListener('click', (e) => {
+                    // ако текущият src е този на li, връщаме на подразбиращ; иначе показваме
+                    if (previewImg.src.endsWith(img)) {
+                        hidePreview();
+                    } else {
+                        showPreview(img, caption);
+                    }
+                });
+            });
+
+            // Ако потребител кликне извън списъка, върни към подразбиращото
+            document.addEventListener('click', (e) => {
+                if (!list.contains(e.target)) {
+                    hidePreview();
+                }
+            });
+        });
+    </script>
+
+@code {
+    private IJSObjectReference? module;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./js/history.js");
+            await module.InvokeVoidAsync("initializeHistoryTimeline");
+        }
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (module is not null)
+        {
+            await module.DisposeAsync();
+        }
+    }
+}
