@@ -12,12 +12,13 @@ main[b-3evq4mve8i] {
 .sidebar[b-3evq4mve8i] {
     background-color: transparent;  /* Remove the solid background color */
     /* Or if you want some transparency with the background image: */
-    background-color: rgba(255, 249, 196, 0.2);  /* Light yellow with 70% opacity */
+    /*background-color: rgba(255, 249, 196, 0.2);*/  /* Light yellow with 70% opacity */
 }
 
 .top-row[b-3evq4mve8i] {
-    background-color: #f5f5c4;
-    border-bottom: 1px solid #d6d5d5;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../img/paperMalena.jpg');
+    /*border-bottom: 1px solid #d6d5d5;*/
+    background-size: cover;
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;
@@ -105,7 +106,7 @@ main[b-3evq4mve8i] {
 
 .top-row[b-7kjye77jug] {
     height: 3.5rem;
-    background-color: #f5f5c4;
+    background-color: rgba(f,f,f,0.0);
 }
 
 .navbar-brand[b-7kjye77jug] {
@@ -735,8 +736,8 @@ main[b-3evq4mve8i] {
 /* /Pages/HomeAI.razor.rz.scp.css */
 /* Общи настройки */
 :root[b-ra9jotzfwb] {
-    --green-dark: #004d40;
-    --green-mid: #00796b;
+    /*--green-dark: #004d40;
+    --green-mid: #00796b;*/
     --accent: #26a69a;
     --bg: #f9f9f9;
     --card: #ffffff;
@@ -752,8 +753,8 @@ html[b-ra9jotzfwb], body[b-ra9jotzfwb] {
 }
 
 header[b-ra9jotzfwb] {
-    background: var(--green-dark);
-    color: #fff;
+/*    background: var(--green-dark);
+    color: #000;*/
     text-align: center;
     padding: 2rem 1rem;
 }
@@ -782,13 +783,13 @@ nav li[b-ra9jotzfwb] {
 }
 
 nav a[b-ra9jotzfwb] {
-    color: #a5d6a7;
+    color: #333;
     text-decoration: none;
     font-weight: 700;
 }
 
     nav a:hover[b-ra9jotzfwb] {
-        color: #fff;
+        color: #000;
     }
 
 /* Основен контейнер: две колони */
@@ -905,13 +906,13 @@ nav a[b-ra9jotzfwb] {
 }
 
 /* Footer */
-footer[b-ra9jotzfwb] {
+/*footer {
     text-align: center;
     padding: 1.25rem;
     background: var(--green-dark);
     color: #fff;
     margin-top: 2rem;
-}
+}*/
 
 nav[b-ra9jotzfwb] {
     margin-bottom: 20px;
@@ -929,11 +930,11 @@ nav[b-ra9jotzfwb] {
         }
 
 a:link[b-ra9jotzfwb] {
-    color: #fff;
+    color: #333;
 }
 
 a:visited[b-ra9jotzfwb] {
-    color: #fff;
+    color: #444;
 }
 
 
@@ -973,10 +974,10 @@ a:visited[b-ra9jotzfwb] {
     background-color: rgba(0, 0, 0, 0);
     border-radius: 8px;
     padding: 16px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    height: 650px;
+    height: auto;
 }
 
     /* ==== TITLES STYLE ==== */
@@ -1000,7 +1001,7 @@ a:visited[b-ra9jotzfwb] {
         object-fit: cover;
         border-radius: 6px;
         margin-bottom: 12px;
-        height: 35%;
+        height: auto;
     }
 
     .patron p[b-ra9jotzfwb] {
@@ -1068,4 +1069,26 @@ a:visited[b-ra9jotzfwb] {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
+}
+
+/* Style the entire scrollbar */
+.patron p[b-ra9jotzfwb]::-webkit-scrollbar {
+    width: 10px;
+    background-color: antiquewhite;
+    opacity: 0.2;
+    margin:  5px;
+    border-radius:6px;
+}
+
+/* Style the scrollbar thumb */
+.patron p[b-ra9jotzfwb]::-webkit-scrollbar-thumb {
+    background-color: antiquewhite;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+}
+
+/* Style the scrollbar track */
+.patron p[b-ra9jotzfwb]::-webkit-scrollbar-track {
+    background-color: bisque;
+    border-radius: 6px;
 }

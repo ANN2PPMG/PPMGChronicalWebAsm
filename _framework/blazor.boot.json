@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "PPMGChronicalWebAsm",
   "resources": {
-    "hash": "sha256-0ChNZXEK5J012qPcAauU7qk877Dp+EKgIxepLINXBYQ=",
+    "hash": "sha256-jGwgC4Xcnfj95QxLogjYjgGGnHFt52DaBNewbaU/fjU=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-vtotCeXt2UD6oc459laJT32vBgigZ+eLoUmdeFkvYDk="
     },
@@ -57,7 +57,7 @@
       "System.Threading.wasm": "sha256-qdFor27turMzpayhcymzZpI1BeMuDgpHqzsi06+Zceo=",
       "System.Web.HttpUtility.wasm": "sha256-d/uQ1xy7bhv6hLDznliPtCRHP9BfpZTBFO7CYlW1hjo=",
       "System.Private.CoreLib.wasm": "sha256-uTl7nmXsEnIQX9mYymVrAGMPVcINhI5gyfKJGVSxw/8=",
-      "PPMGChronicalWebAsm.wasm": "sha256-f1mD6FyPRAkx7oUwE63e+gIKLGM679UpZhiY0Cd/oJk="
+      "PPMGChronicalWebAsm.wasm": "sha256-LnG7+P5ZtFazVl2ld+B8jFcubsxmjkxpBYD5i0mGZwQ="
     }
   },
   "cacheBootResources": true,

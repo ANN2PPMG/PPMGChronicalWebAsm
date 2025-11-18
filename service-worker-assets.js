@@ -1,12 +1,12 @@
 self.assetsManifest = {
-  "version": "85uxMfZK",
+  "version": "1s/jaJeE",
   "assets": [
     {
       "hash": "sha256-d+lHr0+3CmK0aUaMKSsUULAEvGlWOlnlJRamuBjlNmM=",
       "url": "404.html"
     },
     {
-      "hash": "sha256-mBN2LBmKFtf9SleTjHLGaS2XImRa/4GVJjjkyuR5aVk=",
+      "hash": "sha256-5US+QMcE+Lc3MuAYWUiEYXl9CnWZoQh5Wx12iaUyO3E=",
       "url": "PPMGChronicalWebAsm.styles.css"
     },
     {
@@ -86,7 +86,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.JSInterop.wasm"
     },
     {
-      "hash": "sha256-f1mD6FyPRAkx7oUwE63e+gIKLGM679UpZhiY0Cd/oJk=",
+      "hash": "sha256-LnG7+P5ZtFazVl2ld+B8jFcubsxmjkxpBYD5i0mGZwQ=",
       "url": "_framework/PPMGChronicalWebAsm.wasm"
     },
     {
@@ -174,7 +174,7 @@ self.assetsManifest = {
       "url": "_framework/System.Web.HttpUtility.wasm"
     },
     {
-      "hash": "sha256-xc+u6RWQGqX3ewUZoHjtUpK0mqE3sxtCBJB8C+lH3as=",
+      "hash": "sha256-L9JXcWs9nQXBevf16R8JRLvLuP9ZmpBmTdmYOIjK/Uk=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -210,7 +210,7 @@ self.assetsManifest = {
       "url": "_framework/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-4lV4jnauZPD4I/C8dSfyDHoQHF5uzh+1cNZSnC6Qn18=",
+      "hash": "sha256-AsCx88GSuj7KRTsoBXxiUF8QtGc0agCU0GBRYCWFwTM=",
       "url": "css/app.css"
     },
     {
@@ -226,7 +226,7 @@ self.assetsManifest = {
       "url": "css/competitions.css"
     },
     {
-      "hash": "sha256-bU0C4UyKEmhsTxBk7ZpqSFNHRT7cWSZRlykoLd2umTI=",
+      "hash": "sha256-1LmD9t7LYF7Lo0hjLSoSLlRg17rK3f4SFHD46qaf1HY=",
       "url": "css/home.css"
     },
     {
@@ -334,12 +334,24 @@ self.assetsManifest = {
       "url": "img/paper66.jpg"
     },
     {
+      "hash": "sha256-lnrC39j2pULz+LpT7vOoMU8G8v3oUA+9N8Z8shhV2eQ=",
+      "url": "img/paperMalena.jpg"
+    },
+    {
+      "hash": "sha256-RJ1spDvWn/46qDPh96Qpuc3JF5/8H4JdJ7+suSPLUCE=",
+      "url": "img/persons/KrasimirStoyanov.jpg"
+    },
+    {
       "hash": "sha256-iXxE9UYl/RODncTiufNtZ/eJvXy+tAIYfv5LzY+QtQw=",
       "url": "img/persons/MilenaAndonova.jpg"
     },
     {
       "hash": "sha256-OlowtIlv0tVAc3lQgivChLTf4MUhXR8uHJpFnaMO8oM=",
       "url": "img/persons/SonqDimova.png"
+    },
+    {
+      "hash": "sha256-JYgra/e4iboFEjwgnCt03Swh7xr6M0DEeRarTIqRw/8=",
+      "url": "img/persons/StanchoSlavov.jpg"
     },
     {
       "hash": "sha256-sxw9JIJtu+S5KjZjXdqcrNcsgeBooFUHIIz7RpbmS/s=",
