@@ -11,12 +11,13 @@ main {
 .sidebar {
     background-color: transparent;  /* Remove the solid background color */
     /* Or if you want some transparency with the background image: */
-    background-color: rgba(255, 249, 196, 0.2);  /* Light yellow with 70% opacity */
+    /*background-color: rgba(255, 249, 196, 0.2);*/  /* Light yellow with 70% opacity */
 }
 
 .top-row {
-    background-color: #f5f5c4;
-    border-bottom: 1px solid #d6d5d5;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../img/paperMalena.jpg');
+    /*border-bottom: 1px solid #d6d5d5;*/
+    background-size: cover;
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;

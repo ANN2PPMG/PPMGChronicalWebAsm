@@ -1,7 +1,7 @@
 ﻿/* Общи настройки */
 :root {
-    --green-dark: #004d40;
-    --green-mid: #00796b;
+    /*--green-dark: #004d40;
+    --green-mid: #00796b;*/
     --accent: #26a69a;
     --bg: #f9f9f9;
     --card: #ffffff;
@@ -17,8 +17,8 @@ html, body {
 }
 
 header {
-    background: var(--green-dark);
-    color: #fff;
+/*    background: var(--green-dark);
+    color: #000;*/
     text-align: center;
     padding: 2rem 1rem;
 }
@@ -47,13 +47,13 @@ nav li {
 }
 
 nav a {
-    color: #a5d6a7;
+    color: #333;
     text-decoration: none;
     font-weight: 700;
 }
 
     nav a:hover {
-        color: #fff;
+        color: #000;
     }
 
 /* Основен контейнер: две колони */
@@ -170,13 +170,13 @@ nav a {
 }
 
 /* Footer */
-footer {
+/*footer {
     text-align: center;
     padding: 1.25rem;
     background: var(--green-dark);
     color: #fff;
     margin-top: 2rem;
-}
+}*/
 
 nav {
     margin-bottom: 20px;
@@ -194,11 +194,11 @@ nav {
         }
 
 a:link {
-    color: #fff;
+    color: #333;
 }
 
 a:visited {
-    color: #fff;
+    color: #444;
 }
 
 
@@ -238,10 +238,10 @@ a:visited {
     background-color: rgba(0, 0, 0, 0);
     border-radius: 8px;
     padding: 16px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    height: 650px;
+    height: auto;
 }
 
     /* ==== TITLES STYLE ==== */
@@ -265,7 +265,7 @@ a:visited {
         object-fit: cover;
         border-radius: 6px;
         margin-bottom: 12px;
-        height: 35%;
+        height: auto;
     }
 
     .patron p {
@@ -333,4 +333,26 @@ a:visited {
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
+}
+
+/* Style the entire scrollbar */
+.patron p::-webkit-scrollbar {
+    width: 10px;
+    background-color: antiquewhite;
+    opacity: 0.2;
+    margin:  5px;
+    border-radius:6px;
+}
+
+/* Style the scrollbar thumb */
+.patron p::-webkit-scrollbar-thumb {
+    background-color: antiquewhite;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+}
+
+/* Style the scrollbar track */
+.patron p::-webkit-scrollbar-track {
+    background-color: bisque;
+    border-radius: 6px;
 }
