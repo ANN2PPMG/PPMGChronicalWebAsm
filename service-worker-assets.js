@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "1s/jaJeE",
+  "version": "qHnMNJHY",
   "assets": [
     {
       "hash": "sha256-d+lHr0+3CmK0aUaMKSsUULAEvGlWOlnlJRamuBjlNmM=",
@@ -86,7 +86,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.JSInterop.wasm"
     },
     {
-      "hash": "sha256-LnG7+P5ZtFazVl2ld+B8jFcubsxmjkxpBYD5i0mGZwQ=",
+      "hash": "sha256-R3n9JZ8oD3h1uBZPvVtr3HLaG6szxmd2+wa9QoXgZsw=",
       "url": "_framework/PPMGChronicalWebAsm.wasm"
     },
     {
@@ -174,7 +174,7 @@ self.assetsManifest = {
       "url": "_framework/System.Web.HttpUtility.wasm"
     },
     {
-      "hash": "sha256-L9JXcWs9nQXBevf16R8JRLvLuP9ZmpBmTdmYOIjK/Uk=",
+      "hash": "sha256-DTHfh0xRJsK7SYYcCytRKViDb6n1+3CnQJqQZdPTnHo=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -338,8 +338,16 @@ self.assetsManifest = {
       "url": "img/paperMalena.jpg"
     },
     {
+      "hash": "sha256-qcALPLvpIK2ZJwEiTdGPo2Lj0Fs9GSjERrgzkpyM784=",
+      "url": "img/persons/Ivan_Staikov.jpg"
+    },
+    {
       "hash": "sha256-RJ1spDvWn/46qDPh96Qpuc3JF5/8H4JdJ7+suSPLUCE=",
       "url": "img/persons/KrasimirStoyanov.jpg"
+    },
+    {
+      "hash": "sha256-44Itbs/W1uIVJS6nJsRziBfflr36yr6uPhjA9CjgtwY=",
+      "url": "img/persons/Marco_Drumev_-_direktor.png"
     },
     {
       "hash": "sha256-iXxE9UYl/RODncTiufNtZ/eJvXy+tAIYfv5LzY+QtQw=",
