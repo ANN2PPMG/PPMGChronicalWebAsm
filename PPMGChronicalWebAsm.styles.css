@@ -733,6 +733,39 @@ main[b-3evq4mve8i] {
         max-width: 250px;
     }
 }
+
+.profiles-4[b-8x8ugdet7b] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    
+    /* Тази опция позволява да "зумирате" (мащабирате) само списъка */
+    zoom: 0.8; 
+}
+
+.profiles-4 li[b-8x8ugdet7b] {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profiles-4 img[b-8x8ugdet7b] {
+    width: 120px; /* Фиксирана ширина за снимките, за да са еднакви */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.profiles-4 p[b-8x8ugdet7b] {
+    font-size: 0.9em;
+    line-height: 1.2;
+}
 /* /Pages/HomeAI.razor.rz.scp.css */
 /* Общи настройки */
 :root[b-ra9jotzfwb] {
