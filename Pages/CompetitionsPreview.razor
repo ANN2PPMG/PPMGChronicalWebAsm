@@ -10,8 +10,6 @@
 <div class="print-container">
     <div class="no-print d-flex mb-4 text-center align-items-center gap-3 justify-content-center" >
 
-
-
         <button class="btn btn-primary" onclick="window.print()">
             <i class="bi bi-printer"></i> Печат
         </button>
@@ -26,7 +24,145 @@
         <div class="print-header">
            
                 <h1 class="inkTitle">ППМГ "Академик Никола Обрешков" - град Бургас</h1>
-                <h2 class="mt-3 inkTitle">Летописна книга</h2>
+            <h2 class="mt-3 inkTitle">Летописна книга</h2>
+
+@*             /*Списък със служителите за избраната учебна година, 
+            като се акцентира на ръководството и учителите.*/ *@
+            @if (!string.IsNullOrEmpty(selectedYear))
+            {
+                <h2 class="mt-3 inkTitle">Учебна година @selectedYear</h2>
+                @if (directors != null && directors.Any())
+                {
+                <h3 class="mt-4 inkTitle">Ръководство:</h3>
+                    <ul class="profiles-4">
+                        
+                        @foreach (var d in directors.OrderBy(e => e.Position ))
+                        {
+                            <li>
+                                <img src=@d.Picture alt="Директор">
+                                <p><strong>@d.FullName</strong><br>@d.Position</p>
+                            </li>
+                        }
+                    </ul>
+                }
+
+                @if (teachers != null && teachers.Any())
+                {
+                <h3 class="mt-4 inkTitle">Педагогически персонал:</h3>
+                    <div class="table-responsive mt-3">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-bordered">
+                                <tr class="inkTitle" style="font-size: 1.5em;">
+@*                                     <th scope="col" class="text-center" style="width: 80px;">Снимка</th> *@
+                                    <th scope="col">Име</th>
+                                    <th scope="col">Длъжност</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var t in teachers)
+                                {
+                                    <tr style="font-size: 0.6em">
+                                        @* <td class="text-center">
+                                            @if (!string.IsNullOrEmpty(t.Picture))
+                                            {
+                                                <img src="@t.Picture" alt="@t.FullName" class="rounded-circle border border-1 shadow-sm" style="width: 48px; height: 48px; object-fit: cover;" />
+                                            }
+                                            else
+                                            {
+                                                <!-- Placeholder if no image -->
+                                                <div class="rounded-circle bg-secondary bg-opacity-10 d-flex align-items-center justify-content-center mx-auto" style="width: 48px; height: 48px;">
+                                                    <i class="bi bi-person text-secondary" style="font-size: 1.5rem;"></i>
+                                                </div>
+                                            }
+                                        </td> *@
+                                        <td class="fw-bold text-dark">@t.FullName</td>
+                                        <td class="text-secondary">@t.Position</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            }
+
+            @if (administration != null && administration.Any())
+            {
+            <h3 class="mt-4 inkTitle">Административен персонал:</h3>
+                <div class="table-responsive mt-3">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-bordered">
+                            <tr class="inkTitle" style="font-size: 1.5em;">
+                                @*                                     <th scope="col" class="text-center" style="width: 80px;">Снимка</th> *@
+                                <th scope="col">Име</th>
+                                <th scope="col">Длъжност</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var t in administration)
+                            {
+                                <tr style="font-size: 0.6em">
+                                    @* <td class="text-center">
+                                            @if (!string.IsNullOrEmpty(t.Picture))
+                                            {
+                                                <img src="@t.Picture" alt="@t.FullName" class="rounded-circle border border-1 shadow-sm" style="width: 48px; height: 48px; object-fit: cover;" />
+                                            }
+                                            else
+                                            {
+                                                <!-- Placeholder if no image -->
+                                                <div class="rounded-circle bg-secondary bg-opacity-10 d-flex align-items-center justify-content-center mx-auto" style="width: 48px; height: 48px;">
+                                                    <i class="bi bi-person text-secondary" style="font-size: 1.5rem;"></i>
+                                                </div>
+                                            }
+                                        </td> *@
+                                    <td class="fw-bold text-dark">@t.FullName</td>
+                                    <td class="text-secondary">@t.Position</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+
+            @if (staff != null && staff.Any())
+            {
+                <h3 class="mt-4 inkTitle">Непедагогически персонал:</h3>
+                <div class="table-responsive mt-3">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-bordered">
+                            <tr class="inkTitle" style="font-size: 1.5em;">
+                                @*                                     <th scope="col" class="text-center" style="width: 80px;">Снимка</th> *@
+                                <th scope="col">Име</th>
+                                <th scope="col">Длъжност</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var t in staff)
+                            {
+                                <tr style="font-size: 0.6em">
+                                    @* <td class="text-center">
+                                            @if (!string.IsNullOrEmpty(t.Picture))
+                                            {
+                                                <img src="@t.Picture" alt="@t.FullName" class="rounded-circle border border-1 shadow-sm" style="width: 48px; height: 48px; object-fit: cover;" />
+                                            }
+                                            else
+                                            {
+                                                <!-- Placeholder if no image -->
+                                                <div class="rounded-circle bg-secondary bg-opacity-10 d-flex align-items-center justify-content-center mx-auto" style="width: 48px; height: 48px;">
+                                                    <i class="bi bi-person text-secondary" style="font-size: 1.5rem;"></i>
+                                                </div>
+                                            }
+                                        </td> *@
+                                    <td class="fw-bold text-dark">@t.FullName</td>
+                                    <td class="text-secondary">@t.Position</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            
+
+
             @if (!string.IsNullOrEmpty(searchTerm) || !string.IsNullOrEmpty(selectedSubject))
             {
                 <div class="mt-3 d-flex justify-content-center gap-2">
@@ -38,7 +174,7 @@
                     {
                         <span class="badge bg-primary">Предмет: @selectedSubject</span>
                     }
-                </div>
+                </div >
             }
         </div>
 
@@ -83,8 +219,15 @@
 
 @code {
     private IEnumerable<Competition> competitions;
+    private IEnumerable<Employee> employees;
+    private IEnumerable<Employee> directors;
+    private IEnumerable<Employee> teachers;
+    private IEnumerable<Employee> administration;
+    private IEnumerable<Employee> staff;
     private string searchTerm;
     private string selectedSubject;
+    private string selectedYear;
+
     private bool withBackground = true;
 
     protected override async Task OnInitializedAsync()
@@ -93,8 +236,22 @@
         var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
         searchTerm = query["search"] ?? "";
         selectedSubject = query["subject"] ?? "";
+        selectedYear = query["year"] ?? "";
 
         await SqliteService.InitializeDatabaseAsync("data/PMGChronical.db");
+        if(!string.IsNullOrEmpty(selectedYear))
+        {
+            employees = await SqliteService.GetEmployeesAsync();
+            employees = employees.Where(e => e.AcademicYear == selectedYear).ToList();
+            directors = employees.Where(e => e.Category == "Ръководство").ToList();
+            teachers = employees.Where(e => e.Category == "Педагогически персонал")
+                .OrderBy(e => e.FullName).ToList();
+            administration = employees.Where(e => e.Category == "Административен персонал")
+                .OrderBy(e => e.FullName).ToList();
+            staff = employees.Where(e => e.Category == "Непедагогически персонал")
+            .OrderBy(e => e.FullName).ToList();
+        }
+
         competitions = await SqliteService.GetCompetitionsAsync();
 
         competitions = competitions
@@ -103,6 +260,7 @@
                 (c.description?.ToLower()?.Contains(searchTerm.ToLower()) ?? false))
             .Where(c => string.IsNullOrEmpty(selectedSubject) ||
                 c.subject == selectedSubject)
+            .Where(c => string.IsNullOrEmpty(selectedYear) || c.school_year == selectedYear)
             .OrderByDescending(c => c.period_from)
             .ToList();
     }

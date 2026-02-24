@@ -155,6 +155,41 @@
             return students;
         }
 
+        public async Task<List<Employee>> GetEmployeesAsync()
+        {
+            List<Employee> employees = new List<Employee>();
+
+            try
+            {
+                string query = "SELECT e.id, e.full_name, sa.position, sc.category_name, ay.year_label, sa.status_details, e.picture " +
+                               "FROM employees e " +
+                               "LEFT JOIN staff_assignments sa ON e.id = sa.employee_id " +
+                               "LEFT JOIN staff_categories sc ON sa.category_id = sc.id " +
+                               "LEFT JOIN academic_years ay ON ay.id = sa.year_id";
+                var results = await ExecuteQueryAsync(query);
+
+                foreach (var row in results)
+                {
+                    employees.Add(new Employee
+                    {
+                        Id = int.Parse(row[0]),
+                        FullName = row[1],
+                        Position = row[2],
+                        Category = row[3],
+                        AcademicYear = row[4],
+                        Status = row[5],
+                        Picture = row[6]
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving emplyees: {ex.Message}");
+            }
+
+            return employees;
+        }
+
 
     }
 }

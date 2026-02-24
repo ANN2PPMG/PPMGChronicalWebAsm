@@ -263,9 +263,9 @@
     private void Preview()
     {
         var url = "competitions-preview";
-        if (!string.IsNullOrEmpty(searchTerm) || !string.IsNullOrEmpty(selectedSubject))
+        if (!string.IsNullOrEmpty(searchTerm) || !string.IsNullOrEmpty(selectedSubject) || !string.IsNullOrEmpty(selectedYear))
         {
-            url += $"?search={Uri.EscapeDataString(searchTerm)}&subject={Uri.EscapeDataString(selectedSubject)}";
+            url += $"?search={Uri.EscapeDataString(searchTerm)}&subject={Uri.EscapeDataString(selectedSubject)}&year={Uri.EscapeDataString(selectedYear)}";
         }
         NavigationManager.NavigateTo(url);
     }
