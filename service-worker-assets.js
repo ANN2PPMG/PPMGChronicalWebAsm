@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "il+hgdOF",
+  "version": "ZtpMyBV/",
   "assets": [
     {
       "hash": "sha256-d+lHr0+3CmK0aUaMKSsUULAEvGlWOlnlJRamuBjlNmM=",
@@ -86,7 +86,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.JSInterop.wasm"
     },
     {
-      "hash": "sha256-nu0U1cOGYmJfwbmi7/0Ud1+lAb/9BiH/CD2kG3aS/gE=",
+      "hash": "sha256-NPylhkDp/5rfmkRmit78Aq9oQj9mjwqt/FO4kuh7JWM=",
       "url": "_framework/PPMGChronicalWebAsm.wasm"
     },
     {
@@ -174,7 +174,7 @@ self.assetsManifest = {
       "url": "_framework/System.Web.HttpUtility.wasm"
     },
     {
-      "hash": "sha256-6GScQTXV85uj6uB0UnjYJi+Qy4x7iyqLYToKgkwuJaA=",
+      "hash": "sha256-t/lQqyS7z4vaFaFqN9lcFO+R2WwkKOkxEj+xePtdENQ=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -230,7 +230,7 @@ self.assetsManifest = {
       "url": "css/home.css"
     },
     {
-      "hash": "sha256-NZppzM7obpbsz0X/sOQP2JBojHZRN0ux3aDo0f5AR7c=",
+      "hash": "sha256-CdWhbNKn9Jt1LZCd3e4Ka0XrYmtvnTyX7SWjCjS16Rw=",
       "url": "data/PMGChronical.db"
     },
     {
@@ -268,6 +268,86 @@ self.assetsManifest = {
     {
       "hash": "sha256-5OpgH5tkKJecI6+ZL+n61AfTANaG2/jV30dIudjnuvU=",
       "url": "img/Texturelabs_Paper_378S.jpg"
+    },
+    {
+      "hash": "sha256-KjsRinXhrnX1996HF0sRbVA9Vb3oNQ0LszoJWQXAJl8=",
+      "url": "img/competitions/55-godini-ppmg-obreshkov.jpg"
+    },
+    {
+      "hash": "sha256-GlghLmpJIgDSUqJ11t/hoxUzm3xeSOsgU65m5iJBgKg=",
+      "url": "img/competitions/egmo-2026-medali.jpg"
+    },
+    {
+      "hash": "sha256-MytS/u6tiQkwYnanTBi9H8ztL5EPdqYdVc71JCYgqME=",
+      "url": "img/competitions/eupho-srebaren-medal-miroslav-draganov-2026.jpg"
+    },
+    {
+      "hash": "sha256-/0UGvULPi9otYygwEKrfoWdV7bTXYi1h6IFkPSTtmfo=",
+      "url": "img/competitions/gordeem-se-s-nashite-uchiteli-2026.jpg"
+    },
+    {
+      "hash": "sha256-Rso8ygFOdpq4geKmbkO8LvdJd79YBAqR5Kacle+HlhE=",
+      "url": "img/competitions/imas-global-camp-2026.jpg"
+    },
+    {
+      "hash": "sha256-2t6mfdRV1hiehCeDj7vL+PEhOX7n4nTuifB42XVVQlw=",
+      "url": "img/competitions/imc-2026-ulan-bator.jpg"
+    },
+    {
+      "hash": "sha256-zDBN5+Cy7HuS54g0J+i2EG07852uX3Q57xFkkTwzJAg=",
+      "url": "img/competitions/laureat-olimpiada-po-filosofia-2026.jpg"
+    },
+    {
+      "hash": "sha256-bsXTegwul7rSsdtrEe/z00D/cNMvXX4hVhUmrS+vlhs=",
+      "url": "img/competitions/mezhdunarodno-sastezanie-fizika-kolumbia-2026.jpg"
+    },
+    {
+      "hash": "sha256-aP609kL/VfVfoF2nDHsCivrqBNEbAkp8pQ9IajTkYvs=",
+      "url": "img/competitions/mimc-2026-otlichno-predstavyane.jpg"
+    },
+    {
+      "hash": "sha256-VHDVjJ9jtk5ZzlUqymDNQ4lOM9DxrGWVNhTeb72kpRQ=",
+      "url": "img/competitions/mongolia-imc-2026-zlaten-medal-lachezar-tomov.jpg"
+    },
+    {
+      "hash": "sha256-fHOj0twY1kz9txU4xfNvZ5+hEMKGeQ70RqpkbZYKwug=",
+      "url": "img/competitions/nagrada-uchitel-matematika-ganka-vateva-2026.jpg"
+    },
+    {
+      "hash": "sha256-T7FJTqdIbtQH92Amhee/KIfRyexBQ9drMik82AVu8EE=",
+      "url": "img/competitions/natsionalen-krag-olimpiada-balgarski-ezik-2026.jpg"
+    },
+    {
+      "hash": "sha256-FnNitgJlbYbn0xPn+M20+2MeMV2Dl11CgUV1/HBe4XM=",
+      "url": "img/competitions/natsionalen-krag-olimpiada-fizika-april-2026.jpg"
+    },
+    {
+      "hash": "sha256-y3k+rTCcyTCTz7cWC/NEt8x3FEsSITqc39xb018C6/8=",
+      "url": "img/competitions/natsionalno-proletno-sastezanie-po-fizika-mart-2026.jpg"
+    },
+    {
+      "hash": "sha256-CjlJZFxH1Abr3FJRiz0eHoRhsBufotRyidptZZECtNs=",
+      "url": "img/competitions/pap-2026-pavel-tsonev-shampion.jpg"
+    },
+    {
+      "hash": "sha256-SEITxuxy4CKLfIKQ8YHbF8GOVXdjdYhy8GpDsrPyQ2Q=",
+      "url": "img/competitions/po-leung-kuk-hong-kong-2026.jpg"
+    },
+    {
+      "hash": "sha256-sL0q+ctXeQ1dkEK8+iAdWSKl3UdpC8x/n8mzr1eV7SE=",
+      "url": "img/competitions/prolet-matematichesko-sastezanie-ruse-mart-2026.jpg"
+    },
+    {
+      "hash": "sha256-7tQBZao+FaV+tXuwedwWrekFKPik2MWt5QgROQuLyBU=",
+      "url": "img/competitions/radost-na-brega-lidia-kyuchukova-2026.jpg"
+    },
+    {
+      "hash": "sha256-ShyyfiMtVBeh8VAce/hLMCpYLOfkhgrR9qQ1uOMjtvs=",
+      "url": "img/competitions/uspeh-natsionalna-olimpiada-po-fizika-mart-2026.jpg"
+    },
+    {
+      "hash": "sha256-cAeajh+UvuVUm2+nEB1K3QZjdR0PVPrQKaDfxWLunAo=",
+      "url": "img/competitions/xix-natsionalna-olimpiada-astronomia-2026.jpg"
     },
     {
       "hash": "sha256-q9rf819rSaOhgocdB2ZwPwTFFztyJbpT6uw/uc2k7ns=",
