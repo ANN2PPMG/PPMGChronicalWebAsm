@@ -1,29 +1,42 @@
 ﻿@page "/admin/login"
+@using Microsoft.AspNetCore.Components.WebAssembly.Hosting
 @using PPMGChronicalWebAsm.Services
 @inject AdminAuthService AuthService
 @inject NavigationManager NavManager
 @inject ErrorService ErrorService
+@inject IWebAssemblyHostEnvironment HostEnvironment
 
-<h3>Admin Login</h3>
+@if (HostEnvironment.IsDevelopment())
+{
+    <h3>Admin Login</h3>
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="form-group">
-            <label for="password">Admin Password</label>
-            <input type="password" class="form-control" id="password" @bind="password" />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="password">Admin Password</label>
+                <input type="password" class="form-control" id="password" @bind="password" />
+            </div>
+            <button class="btn btn-primary mt-2" @onclick="Login">Login</button>
+
+            @if (!string.IsNullOrEmpty(errorMessage))
+            {
+                <div class="alert alert-danger mt-3">@errorMessage</div>
+            }
         </div>
-        <button class="btn btn-primary mt-2" @onclick="Login">Login</button>
-
-        @if (!string.IsNullOrEmpty(errorMessage))
-        {
-            <div class="alert alert-danger mt-3">@errorMessage</div>
-        }
     </div>
-</div>
+}
 
 @code {
     private string password = "";
     private string errorMessage = "";
+
+    protected override void OnInitialized()
+    {
+        if (!HostEnvironment.IsDevelopment())
+        {
+            NavManager.NavigateTo("/", replace: true);
+        }
+    }
 
     private async Task Login()
     {

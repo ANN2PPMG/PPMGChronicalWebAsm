@@ -2,11 +2,13 @@
 @page "/admin"
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Hosting
 @using PPMGChronicalWebAsm.Services
 @inject AdminAuthService AuthService
 @inject NavigationManager NavManager
 @inject SqliteService SqliteService
 @inject ErrorService ErrorService
+@inject IWebAssemblyHostEnvironment HostEnvironment
 
 @attribute [Authorize]
 
@@ -86,8 +88,14 @@
 
     protected override async Task OnInitializedAsync()
     {
+        if (!HostEnvironment.IsDevelopment())
+        {
+            NavManager.NavigateTo("/", replace: true);
+            return;
+        }
+
         bool isAuthenticated = await AuthService.IsAuthenticatedAsync();
-        
+
         if (!isAuthenticated)
         {
             NavManager.NavigateTo("/admin/login");
